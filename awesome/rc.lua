@@ -312,7 +312,7 @@ client.connect_signal("request::default_keybindings", function()
         awful.key({ modkey }, "Return", function()
             awful.utils.spawn("rofi -show run") end,
             {description = "run rofi", group = "padrition"}),        
-        awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
+        awful.key({ modkey}, "q",      function (c) c:kill()                         end,
                 {description = "close", group = "client"}),
         awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
                 {description = "toggle floating", group = "client"}),
