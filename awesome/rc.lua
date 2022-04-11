@@ -130,6 +130,8 @@ awful.mouse.append_global_mousebindings({
 
 -- General Awesome keys
 awful.keyboard.append_global_keybindings({
+    awful.key({ modkey }, "Return", function() awful.spawn("rofi -show run") end,
+              {description = "run rofi", group = "padrition"}),
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
@@ -308,10 +310,7 @@ client.connect_signal("request::default_keybindings", function()
                 c.fullscreen = not c.fullscreen
                 c:raise()
             end,
-            {description = "toggle fullscreen", group = "client"}),
-        awful.key({ modkey }, "Return", function()
-            awful.utils.spawn("rofi -show run") end,
-            {description = "run rofi", group = "padrition"}),        
+            {description = "toggle fullscreen", group = "client"}),        
         awful.key({ modkey}, "q",      function (c) c:kill()                         end,
                 {description = "close", group = "client"}),
         awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
