@@ -138,6 +138,7 @@ awful.keyboard.append_global_keybindings({
     awful.key({ }, "XF86AudioPlay", function() awful.util.spawn("playerctl play-pause") end),
     awful.key({ }, "XF86AudioNext", function() awful.util.spawn("playerctl next") end),
     awful.key({ }, "XF86AudioPrev", function() awful.util.spawn("playerctl previous") end),
+    awful.key({ }, "Print", function() awful.util.spawn("flameshot launcher") end),
     awful.key({ modkey }, "Return", function() awful.spawn("rofi -show run") end,
               {description = "run rofi", group = "padrition"}),
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
