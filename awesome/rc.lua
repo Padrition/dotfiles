@@ -130,6 +130,8 @@ awful.mouse.append_global_mousebindings({
 
 -- General Awesome keys
 awful.keyboard.append_global_keybindings({
+    awful.key({ }, "XF86MonBrightnessDown", function() awful.util.spawn("xbacklight -dec 10") end),
+    awful.key({ }, "XF86MonBrightnessUp", function() awful.util.spawn("xbacklight -inc 10") end),
     awful.key({ modkey }, "Return", function() awful.spawn("rofi -show run") end,
               {description = "run rofi", group = "padrition"}),
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
